@@ -2,9 +2,10 @@ var path = require("path"),
 	webpack = require("webpack"),
 	OpenBrowserPlugin = require("open-browser-webpack-plugin");
 	
-var __DEV__ = "true";
+var __DEV__ = "true",
+	pathDev = "pc/jsdev/";
 
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin("./js/common.js"),
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin("./pc/js/common.js"),
 	HotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin(),
 	OpenBrowserPlugin= new OpenBrowserPlugin({url: "http://localhost:19992"}),
 	NoErrorsPlugin = new webpack.NoErrorsPlugin(),
@@ -20,11 +21,11 @@ module.exports = {
 	entry: [
 		"webpack/hot/dev-server",
 		"webpack-dev-server/client?http://localhost:19992",		
-		"./jsdev/main.js"
+		"./pc/jsdev/main.js"
 	],
 	// 入口文件输出配置
 	output: {
-		filename: "./js/main.js"
+		filename: "./pc/js/app.js"
 	},
 	module: {
 		// 加载器配置 -loader  可以省略不写
@@ -42,6 +43,7 @@ module.exports = {
 	// 其他解决方案配置
 	resolve: {
 		alias: {
+			"common" : path.join(__dirname, pathDev, "/common/common")
 //			'react-router': path.join(__dirname, '..', 'modules')
 		}
 	}

@@ -1,0 +1,14 @@
+@mixin i-set($width: 16, $height: 16px, $url: "", $size: 'contain'){
+    display: inline-block;
+    vertical-align: middle;
+    width: $width + px;
+    height: $height + px;
+    background: url($url) no-repeat;
+    background-size: contain;
+}
+
+@mixin font-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;    
+}

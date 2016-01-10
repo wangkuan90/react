@@ -1,0 +1,16 @@
+.title-header{
+    background: $back-green;
+    height: 44px;
+    position: relative;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    line-height: 44px;
+    i{
+        @include i-set(20, 20, "../img/android-add.png");
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        margin-top: -10px;
+    }
+}
